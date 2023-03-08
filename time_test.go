@@ -58,20 +58,24 @@ func ExampleTime_UnmarshalJSON() {
 		return
 	}
 
-	fmt.Println("NumSeconds:", time.Time(parsed.NumSeconds))
-	fmt.Println("HexSeconds:", time.Time(parsed.HexSeconds))
-	fmt.Println("NumMicroseconds:", time.Time(parsed.NumMicroseconds))
-	fmt.Println("NumMilliseconds:", time.Time(parsed.NumMilliseconds))
-	fmt.Println("NumNanoseconds:", time.Time(parsed.NumNanoseconds))
-	fmt.Println("StrMicroseconds:", time.Time(parsed.StrMicroseconds))
-	fmt.Println("StrMilliseconds:", time.Time(parsed.StrMilliseconds))
-	fmt.Println("StrNanoseconds:", time.Time(parsed.StrNanoseconds))
-	fmt.Println("StrSeconds:", time.Time(parsed.StrSeconds))
-	fmt.Println("StrRFC1123:", time.Time(parsed.StrRFC1123))
-	fmt.Println("StrRFC3339:", time.Time(parsed.StrRFC3339))
-	fmt.Println("StrRFC3339Nano:", time.Time(parsed.StrRFC3339Nano))
-	fmt.Println("StrRFC822:", time.Time(parsed.StrRFC822))
-	fmt.Println("StrRFC850:", time.Time(parsed.StrRFC850))
+	fmt.Println("NumSeconds:", parsed.NumSeconds)
+	fmt.Println("HexSeconds:", parsed.HexSeconds)
+	fmt.Println("NumMicroseconds:", parsed.NumMicroseconds)
+	fmt.Println("NumMilliseconds:", parsed.NumMilliseconds)
+	fmt.Println("NumNanoseconds:", parsed.NumNanoseconds)
+	fmt.Println("StrMicroseconds:", parsed.StrMicroseconds)
+	fmt.Println("StrMilliseconds:", parsed.StrMilliseconds)
+	fmt.Println("StrNanoseconds:", parsed.StrNanoseconds)
+	fmt.Println("StrSeconds:", parsed.StrSeconds)
+	fmt.Println("StrRFC1123:", parsed.StrRFC1123)
+	fmt.Println("StrRFC3339:", parsed.StrRFC3339)
+	fmt.Println("StrRFC3339Nano:", parsed.StrRFC3339Nano)
+	fmt.Println("StrRFC822:", parsed.StrRFC822)
+	fmt.Println("StrRFC850:", parsed.StrRFC850)
+
+	// Covert time.Time to gotimeparser.Time.
+	gotime := time.Date(2023, 3, 7, 19, 33, 23, 523, time.UTC)
+	fmt.Println("gotimeparser.Time:", gotimeparser.FromGoTime(gotime))
 
 	// Output:
 	// NumSeconds: 2022-05-05 20:35:02 -0700 PDT
@@ -88,4 +92,5 @@ func ExampleTime_UnmarshalJSON() {
 	// StrRFC3339Nano: 2022-05-06 03:35:02.363368423 +0000 UTC
 	// StrRFC822: 2022-05-06 03:35:00 +0000 UTC
 	// StrRFC850: 2022-05-06 03:35:02 +0000 UTC
+	// gotimeparser.Time: 2023-03-07 19:33:23.000000523 +0000 UTC
 }
