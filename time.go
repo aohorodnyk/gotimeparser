@@ -8,7 +8,8 @@ func FromGoTime(t time.Time) Time {
 }
 
 // Time is a custom Time type that can be used during a parsing process.
-// To convert to `time.Time“ use `timeVariable.GoTime()` function.
+// This Time type meant to be used during parsing type.
+// It extends all default behaviour from time.Time, but one method `GoTime` added to get time.Time.
 type Time struct {
 	time.Time
 }
